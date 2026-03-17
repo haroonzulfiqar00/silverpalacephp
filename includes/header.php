@@ -36,7 +36,7 @@
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.php" class="<?= ($currentPage == 'index.php') ? 'active' : ''; ?>">Home</a></li>
+          <li><a href="index.php" class="<?= ($currentPage == 'index.php') ? 'active' : ''; ?>">Homie</a></li>
           <li><a href="documentation.php" class="<?= ($currentPage == 'documentation.php') ? 'active' : ''; ?>">Documentation</a></li>
           <li><a href="construction.php" class="<?= ($currentPage == 'construction.php') ? 'active' : ''; ?>">Construction</a></li>
           <li><a href="cleaning.php" class="<?= ($currentPage == 'cleaning.php') ? 'active' : ''; ?>">Cleaning</a></li>
