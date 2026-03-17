@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="image-box relative-img">
-                        <img src="https://images.unsplash.com/photo-1542744094-24638ea0b3b5?auto=format&fit=crop&q=80"
+                        <img src="./assets/images/digital services.png"
                             alt="Digital Services & Web Development" class="img-fluid rounded shadow-lg">
                         <div class="cleaning-badge" style="background: var(--white); color: #8b5cf6;">
                             <i class="fa-solid fa-code"></i>
@@ -79,7 +79,7 @@
                 <!-- Social Media Block -->
                 <div class="col-md-6 mt-4">
                     <div class="cleaning-type-card residential">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80"
+                        <img src="./assets/images/social-media-handling.jpg"
                             alt="Social Media Handling">
                         <div class="type-content">
                             <h3><i class="fa-solid fa-hashtag" style="color: #8b5cf6;"></i> Social Media Handling</h3>
