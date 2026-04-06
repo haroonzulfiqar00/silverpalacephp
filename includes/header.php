@@ -1,5 +1,29 @@
+<?php
+session_start();
+
+if (isset($_GET['lang'])) {
+    if ($_GET['lang'] == 'ar') {
+        $_SESSION['lang'] = 'ar';
+    } else {
+        $_SESSION['lang'] = 'en';
+    }
+}
+
+if (!isset($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'en'; // default
+}
+
+if ($_SESSION['lang'] == 'ar') {
+    include __DIR__ . '/lang_ar.php';
+} else {
+    include __DIR__ . '/lang_en.php';
+}
+
+$lang = $_SESSION['lang'];
+$dir = ($lang == 'ar') ? 'rtl' : 'ltr';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?= $lang ?>" dir="<?= $dir ?>">
 
 <head>
   <meta charset="UTF-8">
@@ -36,17 +60,25 @@
       </a>
       <nav>
         <ul class="nav-links">
-          <li><a href="index.php" class="<?= ($currentPage == 'index.php') ? 'active' : ''; ?>">Home</a></li>
-          <li><a href="documentation.php" class="<?= ($currentPage == 'documentation.php') ? 'active' : ''; ?>">Documentation</a></li>
-          <li><a href="construction.php" class="<?= ($currentPage == 'construction.php') ? 'active' : ''; ?>">Construction</a></li>
-          <li><a href="cleaning.php" class="<?= ($currentPage == 'cleaning.php') ? 'active' : ''; ?>">Cleaning</a></li>
-          <li><a href="digital-services.php" class="<?= ($currentPage == 'digital-services.php') ? 'active' : ''; ?>">Digital Services</a></li>
+          <li><a href="index.php" class="<?= ($currentPage == 'index.php') ? 'active' : ''; ?>"><?= $t['home'] ?></a></li>
+          <li><a href="documentation.php" class="<?= ($currentPage == 'documentation.php') ? 'active' : ''; ?>"><?= $t['documentation'] ?></a></li>
+          <li><a href="construction.php" class="<?= ($currentPage == 'construction.php') ? 'active' : ''; ?>"><?= $t['construction'] ?></a></li>
+          <li><a href="cleaning.php" class="<?= ($currentPage == 'cleaning.php') ? 'active' : ''; ?>"><?= $t['cleaning'] ?></a></li>
+          <li><a href="digital-services.php" class="<?= ($currentPage == 'digital-services.php') ? 'active' : ''; ?>"><?= $t['digital_services'] ?></a></li>
           <!-- <li><a href="pricing.php" class="<?= ($currentPage == 'pricing.php') ? 'active' : ''; ?>">Pricing</a></li> -->
-          <li><a href="about.php" class="<?= ($currentPage == 'about.php') ? 'active' : ''; ?>">About Us</a></li>
-          <li><a href="contact.php" class="<?= ($currentPage == 'contact.php') ? 'active' : ''; ?>">Contact</a></li>
+          <li><a href="about.php" class="<?= ($currentPage == 'about.php') ? 'active' : ''; ?>"><?= $t['about_us'] ?></a></li>
+          <li><a href="contact.php" class="<?= ($currentPage == 'contact.php') ? 'active' : ''; ?>"><?= $t['contact'] ?></a></li>
+          
+          <li class="lang-dropdown">
+            <a href="javascript:void(0)"><i class="fa-solid fa-globe"></i> <?= $lang == 'en' ? 'English' : 'العربية' ?> <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="?lang=en">English</a></li>
+              <li><a href="?lang=ar">العربية</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
-      <a href="contact.php#contact_form" class="btn btn-primary nav-cta">Get a Quote</a>
+      <a href="contact.php#contact_form" class="btn btn-primary nav-cta"><?= $t['get_quote'] ?></a>
       <button class="menu-toggle" aria-label="Toggle navigation">
         <i class="fa-solid fa-bars"></i>
       </button>

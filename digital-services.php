@@ -4,7 +4,7 @@
     <section class="page-header"
         style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
         <div class="container text-center">
-            <h1>Digitall Services</h1>
+            <h1>Digital Services</h1>
             <p>Empowering your brand with modern web development, e-commerce, and social media strategies.</p>
         </div>
     </section>

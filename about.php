@@ -4,8 +4,8 @@
     <section class="page-header"
         style="background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
         <div class="container text-center">
-            <h1>About Silver Palace</h1>
-            <p>Your Complete Service Partner for Documentation, Construction & Cleaning Solutions</p>
+            <h1><?= $t['about_title'] ?></h1>
+            <p><?= $t['about_sub'] ?></p>
         </div>
     </section>
 
@@ -14,14 +14,10 @@
         <div class="container">
             <div class="row items-center gap-60">
                 <div class="col-md-6 content-block">
-                    <span class="badge blue-badge">Company Overview</span>
-                    <h2 class="section-title">Who We Are</h2>
-                    <p class="lead-text">Silver Palace is a professional service company providing reliable
-                        documentation assistance, construction solutions, and cleaning services under one roof.</p>
-                    <p>We are committed to delivering fast, transparent, and high-quality services to individuals,
-                        families, and businesses. Whether you need help with legal documentation, building construction,
-                        property maintenance, or professional cleaning services — we are here to support you with
-                        expertise and dedication.</p>
+                    <span class="badge blue-badge"><?= $t['about_who'] ?></span>
+                    <h2 class="section-title"><?= $t['about_who_title'] ?></h2>
+                    <p class="lead-text"><?= $t['about_who_desc1'] ?></p>
+                    <p><?= $t['about_who_desc2'] ?></p>
                 </div>
                 <div class="col-md-6">
                     <div class="image-box relative-img">
@@ -29,7 +25,7 @@
                             class="img-fluid rounded shadow-lg">
                         <div class="cleaning-badge" style="border-left-color: var(--primary);">
                             <i class="fa-solid fa-handshake-angle" style="color: var(--primary);"></i>
-                            <span>Trusted<br>Partner</span>
+                            <span><?= $t['about_trusted'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -48,12 +44,10 @@
                         <div class="icon-circle bg-blue text-white"
                             style="background: linear-gradient(135deg, var(--secondary), #d97706);"><i
                                 class="fa-solid fa-bullseye"></i></div>
-                        <h2>Our Mission</h2>
-                        <p class="lead-text" style="color: var(--dark); margin-top: 10px;">Our mission is simple:</p>
-                        <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500;">"To provide trustworthy,
-                            affordable, and professional services that make life easier for our clients."</p>
-                        <p class="mt-4">We aim to build long-term relationships based on trust, quality, and customer
-                            satisfaction.</p>
+                        <h2><?= $t['about_mission'] ?></h2>
+                        <p class="lead-text" style="color: var(--dark); margin-top: 10px;"><?= $t['about_mission_sub'] ?></p>
+                        <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 500;"><?= $t['about_mission_quote'] ?></p>
+                        <p class="mt-4"><?= $t['about_mission_desc'] ?></p>
                     </div>
                 </div>
 
@@ -63,10 +57,8 @@
                         <div class="icon-circle bg-blue text-white"
                             style="background: linear-gradient(135deg, var(--accent), #059669);"><i
                                 class="fa-solid fa-eye"></i></div>
-                        <h2>Our Vision</h2>
-                        <p class="mt-4" style="font-size: 1.15rem; line-height: 1.8;">To become a leading service
-                            provider known for reliability, professionalism, and excellence in documentation,
-                            construction, and facility services.</p>
+                        <h2><?= $t['about_vision'] ?></h2>
+                        <p class="mt-4" style="font-size: 1.15rem; line-height: 1.8;"><?= $t['about_vision_desc'] ?></p>
                     </div>
                 </div>
 
@@ -78,8 +70,8 @@
     <section class="section">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title">Our Core Services</h2>
-                <p class="section-subtitle">Dedicated business and residential solutions executed flawlessly.</p>
+                <h2 class="section-title"><?= $t['core_services'] ?></h2>
+                <p class="section-subtitle"><?= $t['about_core_sub'] ?></p>
             </div>
 
             <div class="grid-3">
@@ -89,23 +81,17 @@
                     <div class="card-icon wrapper-blue" style="margin: 0 auto 20px;">
                         <i class="fa-solid fa-file-contract"></i>
                     </div>
-                    <h3 class="text-center" style="font-size: 1.3rem;">Documentation Services</h3>
+                    <h3 class="text-center" style="font-size: 1.3rem;"><?= $t['doc_services'] ?></h3>
                     <ul class="clean-check-list" style="margin-top: 20px;">
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> CPR Assistance</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Commercial
-                            Registration (CR)</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Business License
-                            Processing</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Visit Visa Services
-                        </li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Company Visa
-                            Processing</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Air Ticket Booking
-                        </li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <?= $t['doc_f1'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <?= $t['doc_f2'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <?= $t['doc_f3'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <?= $t['doc_f4'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <?= $t['doc_f5'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <?= $t['doc_f6'] ?></li>
                     </ul>
                     <p class="text-center mt-4"
-                        style="font-weight: 500; font-size: 0.95rem; color: var(--primary-dark);">We ensure fast
-                        processing and complete guidance from start to finish.</p>
+                        style="font-weight: 500; font-size: 0.95rem; color: var(--primary-dark);"><?= $t['about_doc_sum'] ?></p>
                 </div>
 
                 <!-- Construction Summary -->
@@ -113,21 +99,17 @@
                     <div class="card-icon wrapper-orange" style="margin: 0 auto 20px;">
                         <i class="fa-solid fa-person-digging"></i>
                     </div>
-                    <h3 class="text-center" style="font-size: 1.3rem;">Construction & Maintenance</h3>
+                    <h3 class="text-center" style="font-size: 1.3rem;"><?= $t['const_services'] ?></h3>
                     <ul class="clean-check-list" style="margin-top: 20px;">
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Villa Construction
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <?= $t['const_f1'] ?>
                         </li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Residential &
-                            Commercial Bldg</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Painting Services
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <?= $t['const_f2'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <?= $t['const_f4'] ?>
                         </li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Plumbing &
-                            Electrical Work</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Property
-                            Maintenance</li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <?= $t['const_f5'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <?= $t['const_f3'] ?></li>
                     </ul>
-                    <p class="text-center mt-4" style="font-weight: 500; font-size: 0.95rem; color: #b45309;">Our
-                        experienced team ensures quality workmanship and timely project completion.</p>
+                    <p class="text-center mt-4" style="font-weight: 500; font-size: 0.95rem; color: #b45309;"><?= $t['about_const_sum'] ?></p>
                 </div>
 
                 <!-- Cleaning Summary -->
@@ -135,21 +117,16 @@
                     <div class="card-icon wrapper-green" style="margin: 0 auto 20px;">
                         <i class="fa-solid fa-broom"></i>
                     </div>
-                    <h3 class="text-center" style="font-size: 1.3rem;">Cleaning Services</h3>
+                    <h3 class="text-center" style="font-size: 1.3rem;"><?= $t['clean_services'] ?></h3>
                     <ul class="clean-check-list" style="margin-top: 20px;">
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> House Cleaning</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Flats & Villas
-                            Cleaning</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Office Cleaning</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Shops & Commercial
-                            Cleaning</li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Monthly Contracts
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> <?= $t['clean_f1'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> <?= $t['clean_f2'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> <?= $t['clean_f4'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> <?= $t['clean_f5'] ?></li>
+                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> <?= $t['clean_f6'] ?>
                         </li>
-                        <li><i class="fa-solid fa-circle-check" style="color: var(--accent);"></i> Hourly Cleaning
-                            Services</li>
                     </ul>
-                    <p class="text-center mt-4" style="font-weight: 500; font-size: 0.95rem; color: #047857;">We provide
-                        professional cleaning with trained staff and modern equipment.</p>
+                    <p class="text-center mt-4" style="font-weight: 500; font-size: 0.95rem; color: #047857;"><?= $t['about_clean_sum'] ?></p>
                 </div>
 
             </div>
@@ -161,37 +138,37 @@
         <div class="container">
             <div class="row items-center gap-60">
                 <div class="col-md-6">
-                    <h2 class="section-title light">Why Choose Silver Palace?</h2>
+                    <h2 class="section-title light"><?= $t['about_why'] ?></h2>
                     <ul class="benefits-grid mt-4" style="gap: 15px;">
                         <li class="benefit-item" style="align-items: center; gap: 15px;">
                             <div class="benefit-icon" style="width: 40px; height: 40px; font-size: 1rem;"><i
                                     class="fa-solid fa-check"></i></div>
-                            <h4 style="margin: 0; font-weight: 500;">Professional & Experienced Team</h4>
+                            <h4 style="margin: 0; font-weight: 500;"><?= $t['about_why1'] ?></h4>
                         </li>
                         <li class="benefit-item" style="align-items: center; gap: 15px;">
                             <div class="benefit-icon" style="width: 40px; height: 40px; font-size: 1rem;"><i
                                     class="fa-solid fa-check"></i></div>
-                            <h4 style="margin: 0; font-weight: 500;">Transparent Pricing</h4>
+                            <h4 style="margin: 0; font-weight: 500;"><?= $t['about_why2'] ?></h4>
                         </li>
                         <li class="benefit-item" style="align-items: center; gap: 15px;">
                             <div class="benefit-icon" style="width: 40px; height: 40px; font-size: 1rem;"><i
                                     class="fa-solid fa-check"></i></div>
-                            <h4 style="margin: 0; font-weight: 500;">On-Time Service Delivery</h4>
+                            <h4 style="margin: 0; font-weight: 500;"><?= $t['about_why3'] ?></h4>
                         </li>
                         <li class="benefit-item" style="align-items: center; gap: 15px;">
                             <div class="benefit-icon" style="width: 40px; height: 40px; font-size: 1rem;"><i
                                     class="fa-solid fa-check"></i></div>
-                            <h4 style="margin: 0; font-weight: 500;">Customer Satisfaction Focused</h4>
+                            <h4 style="margin: 0; font-weight: 500;"><?= $t['about_why4'] ?></h4>
                         </li>
                         <li class="benefit-item" style="align-items: center; gap: 15px;">
                             <div class="benefit-icon" style="width: 40px; height: 40px; font-size: 1rem;"><i
                                     class="fa-solid fa-check"></i></div>
-                            <h4 style="margin: 0; font-weight: 500;">Affordable Packages</h4>
+                            <h4 style="margin: 0; font-weight: 500;"><?= $t['about_why5'] ?></h4>
                         </li>
                         <li class="benefit-item" style="align-items: center; gap: 15px;">
                             <div class="benefit-icon" style="width: 40px; height: 40px; font-size: 1rem;"><i
                                     class="fa-solid fa-check"></i></div>
-                            <h4 style="margin: 0; font-weight: 500;">Reliable Support</h4>
+                            <h4 style="margin: 0; font-weight: 500;"><?= $t['about_why6'] ?></h4>
                         </li>
                     </ul>
                 </div>
@@ -203,7 +180,7 @@
                             style="font-size: 3rem; color: var(--primary); margin-bottom: 20px; opacity: 0.5;"></i>
                         <h3
                             style="font-family: var(--font-serif); font-size: 2rem; color: var(--white); font-weight: 400; line-height: 1.5; font-style: italic;">
-                            At Silver Palace, we don’t just provide services — we deliver solutions you can trust.</h3>
+                            <?= $t['about_quote'] ?></h3>
                     </div>
                 </div>
             </div>

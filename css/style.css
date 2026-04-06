@@ -2012,3 +2012,83 @@ textarea.form-control {
         padding: 30px;
     }
 }
+
+/* =========================================
+   LANGUAGE SWITCHER & RTL OVERRIDES
+========================================= */
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-dropdown>a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.lang-dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--white);
+    min-width: 140px;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-sm);
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 1050;
+    list-style: none;
+}
+
+.lang-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown .dropdown-menu li a {
+    color: var(--text-main);
+    padding: 10px 20px;
+    display: block;
+    font-weight: 500;
+}
+
+.lang-dropdown .dropdown-menu li a:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+}
+
+/* Handle colors accurately when scrolled */
+.navbar.scrolled .lang-dropdown>a {
+    color: var(--dark);
+}
+
+.navbar.scrolled .lang-dropdown>a:hover {
+    color: var(--primary);
+}
+
+/* Simple RTL Support Adjustments */
+html[dir="rtl"] {
+    text-align: right;
+}
+
+/* Natively flexbox will reverse direction on rtl layout, we address paddings and margins */
+html[dir="rtl"] .dropdown-menu {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .section-title::after {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+html[dir="rtl"] .service-card::before {
+    transform-origin: right;
+}

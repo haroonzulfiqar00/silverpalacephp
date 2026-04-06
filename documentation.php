@@ -4,8 +4,8 @@
     <section class="page-header"
         style="background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80'); background-size: cover; background-position: center;">
         <div class="container text-center">
-            <h1>Documentation Services</h1>
-            <p>Fast processing for visas, licenses, and company registrations.</p>
+            <h1><?= $t['doc_page_title'] ?></h1>
+            <p><?= $t['doc_page_sub'] ?></p>
         </div>
     </section>
 
@@ -14,15 +14,10 @@
         <div class="container">
             <div class="row items-center gap-60">
                 <div class="col-md-6 content-block">
-                    <span class="badge blue-badge">Expert Assistance</span>
-                    <h2 class="section-title">Navigating Documentation with Ease</h2>
-                    <p class="lead-text">Silver Palace offers a seamless, hassle-free approach to legal and commercial
-                        documentation. Our expert consultants handle all the heavy lifting, dealing directly with
-                        government entities and typing centers to ensure your paperwork is processed accurately and
-                        promptly.</p>
-                    <p>Whether you need a new commercial registration, visa renewals for your growing team, or simply
-                        want to fly in your family, our dedicated desk ensures that every stamp, signature, and
-                        submission is handled efficiently.</p>
+                    <span class="badge blue-badge"><?= $t['doc_nav_badge'] ?></span>
+                    <h2 class="section-title"><?= $t['doc_nav_title'] ?></h2>
+                    <p class="lead-text"><?= $t['doc_nav_desc1'] ?></p>
+                    <p><?= $t['doc_nav_desc2'] ?></p>
                 </div>
                 <div class="col-md-6">
                     <div class="image-box">
@@ -38,50 +33,45 @@
     <section class="section light-bg">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title">What We Handle</h2>
-                <p class="section-subtitle">Comprehensive corporate and individual processing solutions.</p>
+                <h2 class="section-title"><?= $t['doc_what_title'] ?></h2>
+                <p class="section-subtitle"><?= $t['doc_what_sub'] ?></p>
             </div>
 
             <div class="grid-3">
                 <div class="info-card">
                     <div class="icon-circle bg-blue text-white"><i class="fa-solid fa-id-card"></i></div>
-                    <h4>CPR Registration Assistance</h4>
-                    <p>Complete assistance formatting documentation required to issue or renew CPRs for all residents
-                        quickly.</p>
+                    <h4><?= $t['doc_s1_title'] ?></h4>
+                    <p><?= $t['doc_s1_desc'] ?></p>
                 </div>
 
                 <div class="info-card">
                     <div class="icon-circle bg-blue text-white"><i class="fa-solid fa-building"></i></div>
-                    <h4>Commercial Registration (CR)</h4>
-                    <p>We handle the end-to-end CR formation process, including amendments, activity additions, and
-                        renewals.</p>
+                    <h4><?= $t['doc_s2_title'] ?></h4>
+                    <p><?= $t['doc_s2_desc'] ?></p>
                 </div>
 
                 <div class="info-card">
                     <div class="icon-circle bg-blue text-white"><i class="fa-solid fa-certificate"></i></div>
-                    <h4>Business License Processing</h4>
-                    <p>Prompt acquisition of specialized governmental and municipal licenses needed for your operations.
-                    </p>
+                    <h4><?= $t['doc_s3_title'] ?></h4>
+                    <p><?= $t['doc_s3_desc'] ?></p>
                 </div>
 
                 <div class="info-card">
                     <div class="icon-circle bg-blue text-white"><i class="fa-solid fa-plane-arrival"></i></div>
-                    <h4>Visit Visa Processing</h4>
-                    <p>Hassle-free application management for family, tourist, and business visit visas with high
-                        success rates.</p>
+                    <h4><?= $t['doc_s4_title'] ?></h4>
+                    <p><?= $t['doc_s4_desc'] ?></p>
                 </div>
 
                 <div class="info-card">
                     <div class="icon-circle bg-blue text-white"><i class="fa-solid fa-passport"></i></div>
-                    <h4>Company Visa Services</h4>
-                    <p>Managing work permits, labor visas, dependent visas, and residency renewals for corporate staff.
-                    </p>
+                    <h4><?= $t['doc_s5_title'] ?></h4>
+                    <p><?= $t['doc_s5_desc'] ?></p>
                 </div>
 
                 <div class="info-card">
                     <div class="icon-circle bg-blue text-white"><i class="fa-solid fa-ticket-airline"></i></div>
-                    <h4>Air Ticket Booking</h4>
-                    <p>End-to-end travel itinerary planning and immediate ticket booking for international flights.</p>
+                    <h4><?= $t['doc_s6_title'] ?></h4>
+                    <p><?= $t['doc_s6_desc'] ?></p>
                 </div>
             </div>
         </div>
@@ -92,10 +82,9 @@
         <div class="container">
             <div class="row align-center gap-60">
                 <div class="col-md-5">
-                    <h2 class="section-title">Standard Required Documents</h2>
-                    <p class="mb-4">While requirements vary depending on the specific service and nationality, ensuring
-                        you have these baseline documents will drastically speed up your processing time.</p>
-                    <a href="contact.php#contact_form" class="btn btn-outline">Consult Our Experts <i
+                    <h2 class="section-title"><?= $t['doc_req_title'] ?></h2>
+                    <p class="mb-4"><?= $t['doc_req_desc'] ?></p>
+                    <a href="contact.php#contact_form" class="btn btn-outline"><?= $t['doc_req_btn'] ?> <i
                             class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="col-md-7">
@@ -104,29 +93,29 @@
                             <li>
                                 <i class="fa-regular fa-folder-open"></i>
                                 <div>
-                                    <h5>Passport Copies</h5>
-                                    <span>High-resolution scans with at least 6 months of validity.</span>
+                                    <h5><?= $t['doc_r1_title'] ?></h5>
+                                    <span><?= $t['doc_r1_desc'] ?></span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-regular fa-folder-open"></i>
                                 <div>
-                                    <h5>Sponsor ID / CR Copy</h5>
-                                    <span>Clear copy of local sponsor ID or Company CR documentation.</span>
+                                    <h5><?= $t['doc_r2_title'] ?></h5>
+                                    <span><?= $t['doc_r2_desc'] ?></span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-regular fa-folder-open"></i>
                                 <div>
-                                    <h5>Passport Size Photographs</h5>
-                                    <span>Recent photos with white background (standard size).</span>
+                                    <h5><?= $t['doc_r3_title'] ?></h5>
+                                    <span><?= $t['doc_r3_desc'] ?></span>
                                 </div>
                             </li>
                             <li>
                                 <i class="fa-regular fa-folder-open"></i>
                                 <div>
-                                    <h5>Educational/Marriage Certificates</h5>
-                                    <span>Attested copies depending on visa type (dependent/professional).</span>
+                                    <h5><?= $t['doc_r4_title'] ?></h5>
+                                    <span><?= $t['doc_r4_desc'] ?></span>
                                 </div>
                             </li>
                         </ul>
@@ -140,34 +129,34 @@
     <section class="section dark-bg">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title light">Estimated Processing Times</h2>
-                <p class="section-subtitle light">Transparent timelines so you know exactly when to expect results.</p>
+                <h2 class="section-title light"><?= $t['doc_time_title'] ?></h2>
+                <p class="section-subtitle light"><?= $t['doc_time_sub'] ?></p>
             </div>
 
             <div class="timeline-container">
                 <div class="timeline-card">
-                    <div class="time-badge">1 - 2 Days</div>
-                    <h4>Air Ticket Booking</h4>
-                    <p>Immediate booking and confirmation.</p>
+                    <div class="time-badge"><?= $t['doc_t1_badge'] ?></div>
+                    <h4><?= $t['doc_t1_title'] ?></h4>
+                    <p><?= $t['doc_t1_desc'] ?></p>
                 </div>
                 <div class="timeline-card">
-                    <div class="time-badge">3 - 5 Days</div>
-                    <h4>Visit Visas & CPR Renewals</h4>
-                    <p>Standard processing depending on nationality.</p>
+                    <div class="time-badge"><?= $t['doc_t2_badge'] ?></div>
+                    <h4><?= $t['doc_t2_title'] ?></h4>
+                    <p><?= $t['doc_t2_desc'] ?></p>
                 </div>
                 <div class="timeline-card">
-                    <div class="time-badge">1 - 2 Weeks</div>
-                    <h4>Company Visas & Permits</h4>
-                    <p>Subject to labor market approvals.</p>
+                    <div class="time-badge"><?= $t['doc_t3_badge'] ?></div>
+                    <h4><?= $t['doc_t3_title'] ?></h4>
+                    <p><?= $t['doc_t3_desc'] ?></p>
                 </div>
                 <div class="timeline-card">
-                    <div class="time-badge">2 - 4 Weeks</div>
-                    <h4>New CR & Licensing</h4>
-                    <p>Complex activity approvals require varying times.</p>
+                    <div class="time-badge"><?= $t['doc_t4_badge'] ?></div>
+                    <h4><?= $t['doc_t4_title'] ?></h4>
+                    <p><?= $t['doc_t4_desc'] ?></p>
                 </div>
             </div>
             <p class="text-center mt-4" style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">
-                * Note: Timelines are estimates and subject to government system availability and approval.
+                <?= $t['doc_time_note'] ?>
             </p>
         </div>
     </section>
