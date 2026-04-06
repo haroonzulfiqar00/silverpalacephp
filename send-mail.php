@@ -16,14 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $serviceType = htmlspecialchars(trim($_POST['Service_Type']));
     $message = htmlspecialchars(trim($_POST['Message']));
 
+    $lang = isset($_SESSION['lang']) ? $_SESSION['lang'] : 'en';
+
     if (empty($fullName) || empty($phone) || empty($email) || empty($serviceType) || empty($message)) {
-        $_SESSION['form_error'] = "All fields are required.";
+        $_SESSION['form_error'] = $lang === 'ar' ? "جميع الحقول مطلوبة." : "All fields are required.";
         header("Location: contact.php#contact_form");
         exit;
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['form_error'] = "Invalid email format.";
+        $_SESSION['form_error'] = $lang === 'ar' ? "تنسيق بريد إلكتروني غير صالح." : "Invalid email format.";
         header("Location: contact.php#contact_form");
         exit;
     }
@@ -67,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     } catch (Exception $e) {
 
-        $_SESSION['form_error'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        $_SESSION['form_error'] = $lang === 'ar' ? "تعذر إرسال الرسالة. التقطت رسالة خطأ: {$mail->ErrorInfo}" : "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         header("Location: contact.php#contact_form");
         exit;
 

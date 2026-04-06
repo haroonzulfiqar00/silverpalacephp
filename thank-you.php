@@ -52,11 +52,9 @@
         <div class="container">
             <div class="thank-you-box">
                 <i class="fa-solid fa-circle-check success-icon"></i>
-                <h1>Thank You!</h1>
-                <p>Your message has been successfully sent. Our team at Silver Palace will review your inquiry and get
-                    back to you within 24 hours.</p>
-                <a href="index.php" class="btn btn-primary btn-lg"><i class="fa-solid fa-arrow-left"></i> Back to
-                    Homepage</a>
+                <h1><?= $t['thank_you_title'] ?></h1>
+                <p><?= $t['thank_you_desc'] ?></p>
+                <a href="index.php" class="btn btn-primary btn-lg"><i class="fa-solid fa-arrow-left" style="margin: 0 8px;"></i> <?= $t['thank_you_btn'] ?></a>
             </div>
         </div>
     </section>
