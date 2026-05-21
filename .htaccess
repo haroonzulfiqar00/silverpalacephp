@@ -1,0 +1,21 @@
+# Silver Palace - Under Construction Redirection
+# Redirection starts
+RewriteEngine On
+
+# DO NOT redirect the under construction page itself to avoid infinite loops
+RewriteCond %{REQUEST_URI} !under-construction\.php$ [NC]
+
+# DO NOT redirect static assets needed for the page
+RewriteCond %{REQUEST_URI} !/assets/.*$ [NC]
+RewriteCond %{REQUEST_URI} !/css/.*$ [NC]
+RewriteCond %{REQUEST_URI} !/js/.*$ [NC]
+RewriteCond %{REQUEST_URI} !/fonts/.*$ [NC]
+RewriteCond %{REQUEST_URI} !/favicon\.ico$ [NC]
+
+# OPTIONAL: Allow access to specific IP addresses (e.g., for developers)
+# Replace 123.123.123.123 with your actual IP address
+# RewriteCond %{REMOTE_ADDR} !^123\.123\.123\.123$
+
+# Redirect all other requests to the under construction page
+# Use R=302 (Temporary) to avoid SEO issues and browser caching
+RewriteRule ^(.*)$ under-construction.php [R=302,L]
