@@ -1,24 +1,28 @@
 <?php
-// Under Construction Page for Silver Palace
+// Service Suspension Notice for Silver Palace
+// This page is active due to non-payment for development and social media services.
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction | Silver Palace</title>
+    <title>Service Suspended | Silver Palace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --secondary: #f59e0b;
-            --dark: #0f172a;
-            --white: #ffffff;
+            --primary: #ff4757;
+            --primary-dark: #ee5253;
+            --accent: #fbc531;
+            --dark: #0c0d10;
+            --card-bg: rgba(20, 21, 26, 0.8);
+            --text-main: #f1f2f6;
+            --text-dim: #a4b0be;
             --font-sans: 'Outfit', sans-serif;
+            --font-serif: 'Playfair Display', serif;
         }
 
         * {
@@ -30,175 +34,294 @@
         body {
             font-family: var(--font-sans);
             background-color: var(--dark);
-            color: var(--white);
-            height: 100vh;
+            color: var(--text-main);
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            background: url('assets/img/under-construction.png') center/cover no-repeat;
+            padding: 20px;
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, #1e1f26 0%, #0c0d10 100%);
         }
 
-        .overlay {
-            position: absolute;
+        .background-animated {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.4) 100%);
-            z-index: 1;
+            z-index: 0;
+            opacity: 0.1;
+            pointer-events: none;
         }
 
-        .content {
+        .content-wrapper {
             position: relative;
-            z-index: 2;
+            z-index: 10;
+            max-width: 900px;
+            width: 100%;
+            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 71, 87, 0.2);
+            border-radius: 40px;
+            padding: 60px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 71, 87, 0.05);
             text-align: center;
-            padding: 40px;
-            max-width: 800px;
-            width: 90%;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1.5s ease-out;
+            position: relative;
+            overflow: hidden;
         }
 
-        .logo {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            letter-spacing: -1px;
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+            background-size: 200% 100%;
+            animation: gradientMove 3s linear infinite;
         }
 
-        .logo span {
+        .status-header {
+            margin-bottom: 40px;
+        }
+
+        .alert-icon {
+            font-size: 4rem;
             color: var(--primary);
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(255, 71, 87, 0.4));
+            animation: pulseIcon 2s infinite;
         }
 
-        .logo i {
-            color: var(--secondary);
-            margin-right: 10px;
+        .status-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(255, 71, 87, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
         }
 
         h1 {
+            font-family: var(--font-serif);
             font-size: 3.5rem;
-            font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
+            background: linear-gradient(135deg, #ffffff 0%, #a4b0be 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        p {
-            font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 40px;
-            line-height: 1.6;
+        .statement {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 20px;
-            background: rgba(59, 130, 246, 0.2);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 50px;
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.875rem;
+        .dispute-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .profile-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-label {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            display: block;
         }
 
-        .status-badge i {
-            animation: pulse 2s infinite;
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .social-links {
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: #25262e;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .profile-details p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .payment-status {
+            background: rgba(255, 71, 87, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .payment-status p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ff8e98;
+        }
+
+        .actions {
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 40px;
         }
 
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.25rem;
+        .btn {
+            padding: 16px 35px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
         }
 
-        .social-links a:hover {
+        .btn-primary {
             background: var(--primary);
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
         }
 
-        .footer-text {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.875rem;
-            z-index: 2;
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.4);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        .footer-note {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-            100% { opacity: 1; transform: scale(1); }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        @keyframes pulseIcon {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            p { font-size: 1.1rem; }
+            .dispute-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+            .main-card { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="overlay"></div>
-    
-    <div class="content">
-        <div class="status-badge">
-            <i class="fas fa-circle"></i> SITE PROGRESS: 85%
-        </div>
-        
-        <div class="logo">
-            <i class="fas fa-h-square"></i>SILVER <span>PALACE</span>
-        </div>
-        
-        <h1>Something Remarkable is Coming Soon</h1>
-        
-        <p>We're currently refining our digital experience to better serve your needs in documentation, construction, and cleaning services. Stay tuned for our grand reveal.</p>
-        
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
+    <div class="background-animated">
+        <!-- SVG or pattern can go here -->
     </div>
 
-    <div class="footer-text">
-        &copy; <?php echo date('Y'); ?> Silver Palace. All rights reserved.
+    <div class="content-wrapper">
+        <div class="main-card">
+            <div class="status-header">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="status-badge">Payment Overdue</div>
+                <h1>Service Temporarily Suspended</h1>
+            </div>
+
+            <p class="statement">
+                This website, <strong>www.silverpalacebh.com</strong>, and its associated digital platforms have been administrativey suspended due to the failure of the owner to settle outstanding invoices for professional development and marketing services.
+            </p>
+
+            <div class="dispute-grid">
+                <!-- Developer Info -->
+                <div class="profile-box">
+                    <span class="profile-label">Software Developer</span>
+                    <div class="profile-info">
+                        <div class="profile-img">
+                            <i class="fas fa-code" style="font-size: 2rem; display: flex; align-items: center; justify-content: center; height: 100%; color: #57606f;"></i>
+                        </div>
+                        <div class="profile-details">
+                            <h3>Haroon</h3>
+                            <p>Lead Developer & Social Media Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Owner Info -->
+                <div class="profile-box">
+                    <span class="profile-label">Client / Business Owner</span>
+                    <div class="profile-info">
+                        <img src="assets/images/owner.jpg" alt="M Mansha Shan" class="profile-img" onerror="this.innerHTML='<i class=\'fas fa-user-tie\'></i>'; this.type='span';">
+                        <div class="profile-details">
+                            <h3>M Mansha Shan</h3>
+                            <p>Silver Palace, Hamad Town, Bahrain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-status">
+                <p><i class="far fa-clock"></i> Status: Payment pending for over 3 months</p>
+                <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 5px; font-weight: normal;">Daily follow-ups have been non-responsive regarding the settlement of dues.</p>
+            </div>
+
+            <div class="actions">
+                <a href="mailto:haroon@silverpalacebh.com" class="btn btn-primary">Contact Administration</a>
+            </div>
+
+            <div class="footer-note">
+                &copy; <?php echo date('Y'); ?> Service Suspension Notice. Full functionality will be restored immediately upon payment of the agreed-upon dues.
+            </div>
+        </div>
     </div>
 </body>
 </html>
+
