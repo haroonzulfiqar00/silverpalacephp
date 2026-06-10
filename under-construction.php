@@ -259,6 +259,54 @@
             h1 { font-size: 2.2rem; }
             .main-card { padding: 40px 20px; }
         }
+
+        /* Image Modal Styles */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.95);
+            backdrop-filter: blur(15px);
+            cursor: zoom-out;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 20px;
+            box-shadow: 0 0 60px rgba(0,0,0,0.8);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: zoomIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 35px;
+            transition: 0.3s;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+
+        .close-modal:hover {
+            opacity: 1;
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -299,7 +347,7 @@
                 <div class="profile-box">
                     <span class="profile-label">Client / Business Owner</span>
                     <div class="profile-info">
-                        <img src="assets/images/owner.jpg" alt="M Mansha Shan" class="profile-img" onerror="this.innerHTML='<i class=\'fas fa-user-tie\'></i>'; this.type='span';">
+                        <img src="assets/images/owner.jpg" alt="M Mansha Shan" class="profile-img" onclick="openImageModal(this)" style="cursor: zoom-in; border-color: var(--accent);" onerror="this.innerHTML='<i class=\'fas fa-user-tie\'></i>'; this.type='span';">
                         <div class="profile-details">
                             <h3>M Mansha Shan</h3>
                             <p>Silver Palace, Hamad Town, Bahrain</p>
@@ -314,7 +362,7 @@
             </div>
 
             <div class="actions">
-                <a href="mailto:haroon@silverpalacebh.com" class="btn btn-primary">Contact Administration</a>
+                <a href="tel:+923455641907" class="btn btn-primary"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> Call Administration</a>
             </div>
 
             <div class="footer-note">
@@ -322,6 +370,30 @@
             </div>
         </div>
     </div>
+
+    <!-- Image Modal -->
+    <div id="imgModal" class="image-modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        function openImageModal(img) {
+            const modal = document.getElementById("imgModal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imgModal").style.display = "none";
+        }
+
+        // Close on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") closeModal();
+        });
+    </script>
 </body>
 </html>
 
