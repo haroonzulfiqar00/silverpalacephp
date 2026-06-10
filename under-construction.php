@@ -349,7 +349,7 @@
                     <div class="profile-info">
                         <img src="assets/images/owner.jpg" alt="M Mansha Shan" class="profile-img" onclick="openImageModal(this)" style="cursor: zoom-in; border-color: var(--accent);" onerror="this.innerHTML='<i class=\'fas fa-user-tie\'></i>'; this.type='span';">
                         <div class="profile-details">
-                            <h3>M Mansha Shan</h3>
+                            <h3>M Mansha Shan (CEO)</h3>
                             <p>Silver Palace, Hamad Town, Bahrain</p>
                         </div>
                     </div>
